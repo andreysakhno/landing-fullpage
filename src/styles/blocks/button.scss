@@ -1,0 +1,42 @@
+.button {
+  width: 100%;
+  border-radius: 10px;
+  color: #FFF;
+  text-transform: uppercase;
+  font-size: rem(24);
+  font-weight: 700;
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+
+  @include adaptive-value('height', 84, 56);
+
+  @include on-tablet {
+    font-size: rem(32);
+  }
+
+  &--primary {
+    border: 2px solid #FFF;
+    background-color: transparent;
+    box-shadow: 4px 4px 20px 0 rgba(255, 255, 255, 0.4);
+
+    @include hover(background-color, rgba(55, 55, 55, 1));
+  }
+
+  &--next {
+    border: none;
+    background: linear-gradient(103.39deg, #FFE53B -32.17%, #FF2525 114.07%);
+    box-shadow: 4px 4px 20px 0 rgba(255, 255, 255, 0.4);
+    transition: box-shadow $effect-duration ease;
+    transition: font-size $effect-duration ease;
+
+    &:hover {
+      box-shadow: 8px 8px 10px 0 rgba(0, 0, 0, 0.4) inset;
+      font-size: rem(18);
+
+      @include on-tablet {
+        font-size: rem(24);
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+.content-s2 {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: em(10);
+
+  @include adaptive-value('padding-block-start', 35, 20);
+  @include adaptive-value('padding-block-end', 70, 30);
+  @include adaptive-value('gap', 45, 20);
+
+  @media (max-height: 850px) {
+    padding-block: rem(20);
+  }
+
+  &__title {
+    @include adaptive-value('max-width', 1310, 308);
+
+    @include on-desktop {
+      font-size: rem(64);
+    }
+
+    @media (max-height: 850px) {
+      font-size: rem(24);
+    }
+  }
+
+  &__swiper {
+    width: 100%;
+
+    @include on-tablet {
+      margin-block-end: rem(12);
+    }
+
+    @include on-desktop {
+      max-width: rem(1231);
+    }
+  }
+
+  &__button-wrapper {
+    width: 100%;
+
+    @include on-desktop {
+      width: rem(463);
+    }
+  }
+
+  &__button {
+    @media (max-height: 850px) {
+      height: rem(56);
+    }
+  }
+}
+

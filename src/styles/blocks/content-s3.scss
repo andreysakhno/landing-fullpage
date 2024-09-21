@@ -1,0 +1,59 @@
+.content-s3 {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  @include adaptive-value('padding-block-start', 257, 20);
+  @include adaptive-value('padding-block-end', 258, 37);
+  @include adaptive-value('gap', 120, 10);
+
+  &__info {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include adaptive-value('gap', 40, 10);
+  }
+
+  &__title {
+    font-size: rem(48);
+    line-height: 1;
+
+    @include on-tablet {
+      font-size: rem(84);
+    }
+
+    @include on-desktop {
+      font-size: rem(120);
+    }
+  }
+
+  &__text {
+    max-width: rem(785);
+    font-size: rem(18);
+    line-height: math.div(24, 18);
+    text-align: center;
+
+    @include on-tablet {
+      font-size: rem(24);
+      line-height: math.div(28.8, 24);
+    }
+
+    @include on-desktop {
+      font-size: rem(32);
+      line-height: math.div(44.8, 32);
+    }
+  }
+
+  &__button-wrapper {
+    width: 100%;
+
+    @include on-desktop {
+      width: rem(463);
+    }
+  }
+}
+

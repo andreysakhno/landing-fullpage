@@ -1,13 +1,169 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="page">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Miami</title>
-    <link rel="stylesheet" href="./styles/main.scss">
-    <script src="scripts/main.js" defer></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="./styles/main.scss" />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./images/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./images/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./images/favicon/site.webmanifest" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#FFF" />
+
+    <script
+      src="scripts/main.js"
+      type="module"
+      defer
+    ></script>
   </head>
-  <body>
-    <h1>Landing Page</h1>
+
+  <body class="page__body">
+    <main class="page__main">
+      <section class="page__section section">
+        <img
+          class="section__girls section__girls--s1-left"
+          src="./images/section-1/girl-left.png"
+          alt="Girl left"
+        >
+
+        <div class="section__content content-s1">
+          <div class="content-s1__info">
+            <div class="content-s1__top">Stop spending time on mediocre online stuff!</div>
+
+            <h1 class="content-s1__title title">Explore our intriguing 3D game</h1>
+
+            <p class="content-s1__text">Instead and experience unparalleled pleasure like you've never seen before.</p>
+          </div>
+
+          <div class="content-s1__buttons">
+            <button class="content-s1__button button button--next">Continue</button>
+
+            <button
+              class="content-s1__button button button--primary"
+              onclick="javascript:alert('Feature under development');"
+            >
+              No,thanks
+            </button>
+          </div>
+        </div>
+
+        <img
+          class="section__girls section__girls--s1-right"
+          src="./images/section-1/girl-right.png"
+          alt="Girl right"
+        >
+      </section>
+
+      <section class="page__section section">
+        <div class="section__content content-s2">
+
+          <h1 class="content-s2__title title">Who Would You Choose as Your First Partner, if you play right now?</h1>
+
+          <div class="content-s2__swiper swiper">
+            <div class="swiper__wraper swiper-wrapper">
+              <div class="swiper__slide swiper-slide">
+                <div class="swiper__card">
+                  <img
+                    class="swiper__img"
+                    src="./images/section-2/hero-1.jpg"
+                    alt="Your Neighbor"
+                  >
+
+                  <h2 class="swiper__title">Your Neighbor</h2>
+                </div>
+              </div>
+              <div class="swiper__slide swiper-slide">
+                <div class="swiper__card">
+                  <img
+                    class="swiper__img"
+                    src="./images/section-2/hero-2.jpg"
+                    alt="Step-Sister"
+                  >
+
+                  <h2 class="swiper__title">Step-Sister</h2>
+                </div>
+              </div>
+              <div class="swiper__slide swiper-slide">
+                <div class="swiper__card">
+                  <img
+                    class="swiper__img"
+                    src="./images/section-2/hero-3.jpg"
+                    alt="Famous Celebrity"
+                  >
+
+                  <h2 class="swiper__title">Famous Celebrity</h2>
+                </div>
+              </div>
+            </div>
+
+            <button class="swiper__button swiper__button--prev"></button>
+
+            <button class="swiper__button swiper__button--next"></button>
+          </div>
+
+          <div class="content-s2__button-wrapper">
+            <button class="content-s2__button button button--next">
+              Next
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="page__section section">
+        <img
+          class="section__girls section__girls--s3-left"
+          src="./images/section-3/girl-left.png"
+          alt="Girl left"
+        >
+
+        <div class="section__content content-s3">
+          <div class="content-s3__info">
+            <h1 class="content-s3__title title">Warning</h1>
+
+            <p class="content-s3__text">You must be at least 18 years old and comfortable with mature topics to play the game.</p>
+          </div>
+
+          <div class="content-s3__button-wrapper">
+            <button
+              class="content-s3__button button button--next"
+              onclick="javascript:alert('Feature under development');"
+            >
+              Ok, Continue
+            </button>
+          </div>
+        </div>
+
+        <img
+          class="section__girls section__girls--s3-right"
+          src="./images/section-3/girl-right.png"
+          alt="Girl right"
+        >
+      </section>
+    </main>
+
+    <div class="page__music">
+      <button class="music music--muted"></button>
+    </div>
+
+    <audio class="music-container" loop>
+      <source src="https://ia601301.us.archive.org/3/items/Wonderwall_8/12Track1222_vbr.mp3" type="audio/mpeg">
+    </audio>
   </body>
 </html>

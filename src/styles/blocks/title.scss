@@ -1,0 +1,12 @@
+.title {
+  font-weight: 700;
+  font-size: rem(24);
+  line-height: math.div(28.8, 24);
+  text-align: center;
+  text-transform: uppercase;
+  color: transparent;
+  background: linear-gradient(130.09deg, #EB5D38 31.89%, #FFD600 92.03%);
+  background-clip: text;
+  -webkit-text-stroke: 0.5px #FFF;
+  text-shadow: 0 4px 20px 0 rgba(255, 213, 54, 0.5);
+}

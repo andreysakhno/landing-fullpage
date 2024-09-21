@@ -1,0 +1,78 @@
+@mixin font($font_name, $file_name, $weight, $style: normal) {
+  @font-face {
+    font-family: $font_name;
+    font-display: swap;
+    src: url("../fonts/#{$file_name}.woff2") format("woff2"), url("../fonts/#{$file_name}.woff") format("woff");
+    font-weight: #{$weight};
+    font-style: #{$style};
+  }
+}
+
+@mixin hover($property, $to-value) {
+  transition: #{$property} $effect-duration;
+
+  &:hover {
+    #{$property}: $to-value;
+  }
+}
+
+@mixin on-tablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin adaptive-value($property, $start-size, $min-size, $keepSize: 0, $width-from: $max-width, $width-to: $min-width) {
+  @if $start-size == 0 {
+    $start-size: 0.01;
+  }
+
+  @if $min-size == 0 {
+    $min-size: 0.01;
+  }
+
+  $add-size: math.div($start-size - $min-size, 16);
+  $width-from-media: em($width-from);
+  $width-to-media: em($width-to);
+  $slope: math.div(($start-size - $min-size), ($width-from - $width-to));
+  $y-intersection: -$width-to * $slope + $min-size;
+
+  @if $y-intersection == 0 {
+    $y-intersection: 0.01;
+  }
+
+  $fly-value: #{rem($y-intersection)}" + "#{$slope * 100}vw;
+  $property-value: #{"clamp(" rem($min-size) "," $fly-value "," rem($start-size) ")"};
+
+  @if $min-size > $start-size {
+    $property-value: #{"clamp(" rem($start-size) "," $fly-value "," rem($min-size) ")"};
+  }
+
+  @if $keepSize != 1 and $keepSize != 3 {
+    @media (min-width: $width-from-media) {
+      #{$property}: rem($start-size);
+    }
+  }
+
+  @media (min-width: $width-to-media) and (max-width: $width-from-media) {
+    @supports (#{$property}: $property-value) {
+      #{$property}: $property-value;
+    }
+
+    @supports not (#{$property}: $property-value) {
+      #{$property}: calc(#{rem($min-size)} + #{$add-size} * (100vw - #{rem($width-to)}) / #{math.div($width-from, 16) - math.div($width-to, 16)});
+    }
+  }
+
+  @if $keepSize != 1 and $keepSize != 2 {
+    @media (max-width: $width-to-media) {
+      #{$property}: rem($min-size);
+    }
+  }
+}

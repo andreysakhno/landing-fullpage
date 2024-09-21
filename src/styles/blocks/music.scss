@@ -1,0 +1,28 @@
+.music {
+  aspect-ratio: 1 / 1;
+  background: rgba(236, 17, 25, 1) url('../images/icons/sound.svg') center no-repeat;
+  background-size: rem(18.46);
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  @include adaptive-value('width', 52, 30);
+  @include adaptive-value('background-size', 32, 18.46);
+
+  &--muted {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      height: 1px;
+      transform: translate(-50%, -50%) rotate(-45deg);
+      background-color: #FFF;
+
+      @include adaptive-value('width', 76, 45);
+    }
+  }
+}

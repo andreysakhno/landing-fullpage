@@ -1,3 +1,15 @@
-body {
-  margin: 0;
-}
+@use 'sass:math';
+@import "./utils/variables";
+@import "./utils/mixins";
+@import "./utils/functions";
+@include font("Nirmala AI", "nirmala/Nirmala", 400);
+@include font("Nirmala AI", "nirmala/NirmalaB", 700);
+@import "./blocks/page";
+@import "./blocks/music";
+@import "./blocks/title";
+@import "./blocks/swiper";
+@import "./blocks/button";
+@import "./blocks/section";
+@import "./blocks/content-s1";
+@import "./blocks/content-s2";
+@import "./blocks/content-s3";

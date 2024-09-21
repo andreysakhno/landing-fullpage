@@ -1,0 +1,98 @@
+.content-s1 {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  @include adaptive-value('padding-block', 191, 20);
+  @include adaptive-value('gap', 80, 10);
+
+  &__info {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    @include adaptive-value(gap, 20, 10);
+  }
+
+  &__top {
+    width: rem(258);
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10);
+    border-radius: 40px;
+    border: 1px solid #FFF;
+    font-size: rem(16);
+    line-height: math.div(19.2, 16);
+    text-align: center;
+
+    @include adaptive-value('padding-block', 16, 6);
+    @include adaptive-value('padding-inline', 30, 8);
+
+    @include on-tablet {
+      font-size: rem(24);
+      line-height: 1;
+      width: auto;
+    }
+
+    @include on-desktop {
+      font-size: rem(36);
+    }
+  }
+
+  &__title {
+    max-width: rem(1100);
+
+    @include on-tablet {
+      font-size: rem(42);
+      line-height: math.div(50.4, 42);
+    }
+
+    @include on-desktop {
+      margin-block-end: 10px;
+      font-size: rem(84);
+      line-height: math.div(100.8, 84);
+    }
+  }
+
+  &__text {
+    max-width: rem(1100);
+    font-size: rem(12);
+    line-height: math.div(14.4, 12);
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-align: center;
+    color: rgba(255, 242, 206, 1);
+    text-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+
+    @include on-tablet {
+      font-size: rem(20);
+      line-height: math.div(28, 20);
+    }
+
+    @include on-desktop {
+      font-size: rem(28);
+    }
+  }
+
+  &__buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include adaptive-value('gap', 50, 10);
+
+    @include on-tablet {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__button {
+    @include on-desktop {
+      width: rem(323);
+    }
+  }
+}
+

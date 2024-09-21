@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.page {
+  font-family: 'Nirmala AI', Arial, sans-serif;
+  color: $main-text-color;
+  font-weight: 400;
+  font-size: rem($base-font-size);
+  overflow: hidden;
+
+  &__body {
+    position: relative;
+    min-width: em($min-width);
+    overflow: hidden;
+    background: $bg-color url('../images/bg.jpg') top / cover no-repeat;
+  }
+
+  &__main {
+    display: flex;
+    height: 100vh;
+    width: 300vw;
+    transition: transform $effect-duration ease-in-out;
+  }
+
+  &__section {
+    flex: 1;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  &__music {
+    position: absolute;
+    z-index: 100;
+
+    @include adaptive-value('top', 48, 25);
+    @include adaptive-value('right', 74, 11);
+  }
+}

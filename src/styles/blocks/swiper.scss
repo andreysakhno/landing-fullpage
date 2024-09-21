@@ -1,0 +1,113 @@
+.swiper {
+  width: 100%;
+
+  &__slide {
+    display: flex !important;
+    justify-content: center;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 1);
+
+    @include adaptive-value('gap', 30, 10);
+    @include adaptive-value('width', 463, 225);
+    @include adaptive-value('padding-block-start', 42, 22);
+    @include adaptive-value('padding-block-end', 40, 23);
+    @include adaptive-value('padding-inline', 71, 10);
+
+    @media (max-height: 540px) {
+      gap: rem(10);
+    }
+  }
+
+  &__img {
+    @include adaptive-value('max-width', 321, 171);
+
+    aspect-ratio: 0.86;
+    object-fit: cover;
+    object-position: center center;
+    border-radius: 20px;
+    box-shadow: 8px 8px 20px 0 rgba(0, 0, 0, 0.16);
+
+    @include hover(transform, scale(1.1));
+
+    @media (max-height: 540px) {
+      height: 75%;
+    }
+  }
+
+  &__title {
+    font-size: rem(20);
+    line-height: math.div(24, 20);
+    font-weight: 700;
+    text-align: center;
+    box-shadow: 0 4px 2px 0 rgba(0, 0, 0, 0.25);
+    text-transform: uppercase;
+
+    @include on-tablet {
+      font-size: rem(26);
+    }
+
+    @include on-desktop {
+      font-size: rem(32);
+    }
+
+    @media (max-height: 540px) {
+      font-size: rem(20);
+    }
+  }
+
+  &__button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45px;
+    aspect-ratio: 1 / 1;
+    z-index: 10;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    background: linear-gradient(103.39deg, #FFE53B -32.17%, #FF2525 114.07%);
+    transition: box-shadow $effect-duration ease;
+
+    &:hover {
+      box-shadow: 8px 8px 10px 0 rgba(0, 0, 0, 0.4) inset;
+    }
+
+    &::after {
+      content: '';
+      background: url('../images/icons/arrow.svg') left no-repeat;
+      position: absolute;
+      width: 34px;
+      height: 24px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-4px, -50%);
+
+      @include on-desktop {
+        width: 95px;
+      }
+    }
+
+    @include on-desktop {
+      width: 88px;
+    }
+  }
+
+  &__button--prev {
+    left: 0;
+  }
+
+  &__button--next {
+    right: 0;
+    transform: rotate(-180deg) translateY(50%);
+  }
+}
